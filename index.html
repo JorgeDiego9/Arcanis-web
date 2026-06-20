@@ -6,7 +6,7 @@
     <title>Arcanis | Servidor Minecraft Oficial</title>
 
     <!-- SEO -->
-    <meta name="description" content="Arcanis — Servidor Minecraft Survival para habla hispana. Versiones 1.8 a 1.26.2.1. Rangos, misiones, economía con ArCoins y generación de mundo única. Lanzamiento Diciembre 2026.">
+    <meta name="description" content="Arcanis — Servidor Minecraft Survival para habla hispana. Versiones 1.8 a 26.1.2. Rangos, misiones, economía con ArCoins y generación de mundo única. Lanzamiento Diciembre 2026.">
     <meta name="keywords" content="Arcanis, servidor minecraft, survival, arcanis.servemc.net, minecraft hispano">
     <meta name="author" content="Arcanis Network">
     <meta name="theme-color" content="#7c3aed">
@@ -254,7 +254,7 @@
         .role-owner    { color: #c026d3; }
         .role-coowner  { color: #c026d3; }
         .role-mod      { color: #2dd4bf; }
-        .role-helperplus { color: #a855f7; }
+        .role-helperplus { color: #b06ef3; background: linear-gradient(90deg,#a855f7,#60a5fa,#f472b6); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
         .role-helper   { color: #a3e635; }
         .role-open     { color: var(--muted); }
         .staff-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.55; }
@@ -327,7 +327,7 @@
 <!-- BANNER -->
 <div id="news-banner">
     <span class="banner-badge">🚀 Pronto</span>
-    <span>¡Arcanis llega en Diciembre 2026! — Beta disponible en Octubre · Paper 1.8 – 1.26.2.1</span>
+    <span>¡Arcanis llega en Diciembre 2026! — Beta disponible en Octubre · Paper 1.8 – 26.1.2</span>
     <button class="banner-close" onclick="document.getElementById('news-banner').style.display='none'">✕</button>
 </div>
 
@@ -335,7 +335,7 @@
 <header>
     <div class="nav-left">
         <img src="Logo_ARCANIS.png" alt="Logo" class="nav-logo-img" onerror="this.style.display='none'">
-        <a class="nav-logo" href="#inicio">Arcanis</a>
+        <a href="#inicio" style="display:flex;align-items:center;"><img src="Arcanis-Text.png" alt="Arcanis" style="height:22px;image-rendering:pixelated;filter:drop-shadow(0 0 6px rgba(217,70,239,0.5));" onerror="this.outerHTML='<span style=\"font-family:Cinzel,serif;font-size:1rem;font-weight:700;color:#f8f8ff;letter-spacing:3px;\">ARCANIS</span>'"></a>
     </div>
     <nav>
         <a href="#inicio">Inicio</a>
@@ -355,7 +355,7 @@
     <div class="hero-content">
         <div class="version-badge">
             <span class="version-dot"></span>
-            Survival · 1.8 – 1.26.2.1 · Habla Hispana
+            Survival · 1.8 – 26.1.2 · Habla Hispana
         </div>
         <img src="Arcanis-Text.png" alt="Arcanis" class="hero-logo" onerror="this.style.display='none'; document.getElementById('hero-fallback').style.display='block';">
         <h1 id="hero-fallback" style="display:none; font-family:'Cinzel',serif; font-size:4rem; font-weight:900; letter-spacing:6px; color:#f8f8ff; text-shadow:0 0 50px rgba(217,70,239,0.6); margin-bottom:28px;">ARCANIS</h1>
@@ -418,29 +418,29 @@
         <h2 class="block-title reveal">Rangos del Servidor</h2>
         <p class="block-sub reveal">Desde Novato hasta Ecliptus — cada rango se obtiene en la tienda oficial y desbloquea beneficios exclusivos.</p>
         <div class="ranks-grid reveal">
-            <div class="rank-card" style="border-color:rgba(156,163,175,0.3);">
+            <div class="rank-card" style="border-color:rgba(6,182,212,0.3);">
                 <div class="rank-icon">🌱</div>
-                <div class="rank-name" style="color:#9ca3af;">Novato</div>
+                <div class="rank-name" style="color:#06b6d4;">Novato</div>
                 <div class="rank-desc">El inicio del camino</div>
             </div>
-            <div class="rank-card" style="border-color:rgba(96,165,250,0.3);">
+            <div class="rank-card" style="border-color:rgba(34,197,94,0.3);">
                 <div class="rank-icon">⭐</div>
-                <div class="rank-name" style="color:#60a5fa;">Astral</div>
+                <div class="rank-name" style="color:#22c55e;">Astral</div>
                 <div class="rank-desc">El camino se abre</div>
             </div>
-            <div class="rank-card" style="border-color:rgba(167,139,250,0.3);">
+            <div class="rank-card" style="border-color:rgba(147,197,253,0.3);">
                 <div class="rank-icon">🔮</div>
-                <div class="rank-name" style="color:#a78bfa;">Mago</div>
+                <div class="rank-name" style="color:#93c5fd;">Mago</div>
                 <div class="rank-desc">El poder despierta</div>
             </div>
-            <div class="rank-card" style="border-color:rgba(217,70,239,0.3);">
+            <div class="rank-card" style="border-color:rgba(192,38,211,0.3);">
                 <div class="rank-icon">🌀</div>
-                <div class="rank-name" style="color:#d946ef;">Arcano</div>
+                <div class="rank-name" style="color:#c026d3;">Arcano</div>
                 <div class="rank-desc">Magia sin límites</div>
             </div>
-            <div class="rank-card" style="border-color:rgba(251,191,36,0.4); background: rgba(251,191,36,0.04);">
+            <div class="rank-card" style="border-color:rgba(239,68,68,0.4); background: rgba(239,68,68,0.04);">
                 <div class="rank-icon">🌑</div>
-                <div class="rank-name" style="color:#fbbf24;">Ecliptus</div>
+                <div class="rank-name" style="color:#ef4444;">Ecliptus</div>
                 <div class="rank-desc">El rango supremo</div>
             </div>
         </div>
@@ -465,9 +465,9 @@
                 <div class="char-role antagonist">El Ángel Caído — Antagonista</div>
                 <p>Prodigio nacido en Arcanis cuya obsesión por la magia oscura lo transformó en la mayor amenaza que el mundo había conocido. Frío, calculador e implacable.</p>
             </div>
-            <div class="lore-card reveal reveal-delay-3" style="border-color:rgba(217,70,239,0.2);">
+            <div class="lore-card reveal reveal-delay-3" style="border-color:rgba(192,38,211,0.2);">
                 <div style="font-size:1.3rem;margin-bottom:8px;">✨</div>
-                <div class="char-name">Armandrox & JorgeDiego9</div>
+                <div class="char-name">Armandrox12 & JorgeDiego9</div>
                 <div class="char-role founders">Los Dioses Fundadores</div>
                 <p>Los creadores originales de Arcanis. Ascendieron al Cielo pero nunca abandonaron su mundo. Guían desde las sombras, fieles al plan que tejieron antes de partir.</p>
             </div>
@@ -547,7 +547,7 @@
         <div class="staff-grid">
             <div class="staff-card reveal reveal-delay-1">
                 <div class="skin-wrap"><img src="https://mc-heads.net/body/Armandrox12" alt="Armandrox12" onerror="this.parentElement.innerHTML='<div class=\'skin-fallback\'>A</div>'"></div>
-                <div class="staff-info"><div class="staff-name">Armandrox</div><div class="staff-role role-owner">Owner / Fundador</div><p class="staff-desc">El creador original de Arcanis. Arquitecto del mundo y de cada sistema que lo sustenta.</p></div>
+                <div class="staff-info"><div class="staff-name">Armandrox12</div><div class="staff-role role-owner">Owner / Fundador</div><p class="staff-desc">El creador original de Arcanis. Arquitecto del mundo y de cada sistema que lo sustenta.</p></div>
             </div>
             <div class="staff-card reveal reveal-delay-2">
                 <div class="skin-wrap"><img src="https://mc-heads.net/body/JorgeDiego9" alt="JorgeDiego9" onerror="this.parentElement.innerHTML='<div class=\'skin-fallback\'>J</div>'"></div>
@@ -612,7 +612,7 @@
         <div class="footer-brand">
             <img src="Arcanis-Text.png" alt="Arcanis" class="footer-logo" onerror="this.style.display='none'; document.getElementById('footer-text').style.display='block';">
             <span id="footer-text" style="display:none; font-family:'Cinzel',serif; font-size:1.2rem; font-weight:900; letter-spacing:3px; color:#f8f8ff;">ARCANIS</span>
-            <p class="footer-tagline">El servidor Survival de aventura y magia oscura.<br>Forjado por Armandrox & JorgeDiego9.</p>
+            <p class="footer-tagline">El servidor Survival de aventura y magia oscura.<br>Forjado por Armandrox12 & JorgeDiego9.</p>
             <div class="footer-socials">
                 <a href="https://discord.gg/MzPWguHQg" target="_blank" class="footer-social-btn">
                     <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.043.033.055a19.935 19.935 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.138 13.138 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>

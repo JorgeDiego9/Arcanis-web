@@ -335,7 +335,11 @@
 <header>
     <div class="nav-left">
         <img src="Logo_ARCANIS.png" alt="Logo" class="nav-logo-img" onerror="this.style.display='none'">
-        <a href="#inicio" style="display:flex;align-items:center;"><img src="Arcanis-Text.png" alt="Arcanis" style="height:22px;image-rendering:pixelated;filter:drop-shadow(0 0 6px rgba(217,70,239,0.5));" onerror="this.outerHTML='<span style=\"font-family:Cinzel,serif;font-size:1rem;font-weight:700;color:#f8f8ff;letter-spacing:3px;\">ARCANIS</span>'"></a>
+        <a href="#inicio" style="display:flex;align-items:center;">
+            <img src="Arcanis-Text.png" alt="Arcanis" style="height:22px;image-rendering:pixelated;filter:drop-shadow(0 0 6px rgba(217,70,239,0.5));"
+                onerror="this.style.display='none'; document.getElementById('nav-text-fallback').style.display='inline';">
+        </a>
+        <a href="#inicio" id="nav-text-fallback" class="nav-logo" style="display:none;">ARCANIS</a>
     </div>
     <nav>
         <a href="#inicio">Inicio</a>

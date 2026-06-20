@@ -651,9 +651,12 @@
             margin-bottom: 9px;
         }
 
-        .role-owner { color: var(--magenta); }
-        .role-coowner { color: var(--purple-light); }
-        .role-open { color: #22c55e; }
+        .role-owner   { color: #c026d3; }   /* magenta oscuro */
+        .role-coowner { color: #c026d3; }   /* magenta oscuro */
+        .role-mod     { color: #2dd4bf; }   /* verde azulado */
+        .role-helperplus { color: #a855f7; } /* morado */
+        .role-helper  { color: #a3e635; }   /* verde amarilloso */
+        .role-open    { color: var(--muted); }
         .staff-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.55; }
 
         /* ── TIENDA BLOCK ── */
@@ -1119,6 +1122,7 @@
         <h2 class="block-title">Nuestro Staff</h2>
         <p class="block-sub">Las personas detrás de Arcanis.</p>
         <div class="staff-grid">
+            <!-- Armandrox — Owner -->
             <div class="staff-card">
                 <div class="skin-wrap">
                     <img src="https://mc-heads.net/body/Armandrox12" alt="Skin Armandrox12"
@@ -1130,6 +1134,7 @@
                     <p class="staff-desc">El creador original de Arcanis. Arquitecto del mundo y de cada sistema que lo sustenta.</p>
                 </div>
             </div>
+            <!-- JorgeDiego9 — Co-Owner -->
             <div class="staff-card">
                 <div class="skin-wrap">
                     <img src="https://mc-heads.net/body/JorgeDiego9" alt="Skin JorgeDiego9"
@@ -1141,14 +1146,49 @@
                     <p class="staff-desc">Co-fundador y desarrollador principal. Encargado de la infraestructura, el bot y la experiencia del servidor.</p>
                 </div>
             </div>
+            <!-- SrSammy — Helper+ -->
+            <div class="staff-card">
+                <div class="skin-wrap">
+                    <img src="https://mc-heads.net/body/SrSammy" alt="Skin SrSammy"
+                        onerror="this.parentElement.innerHTML='<div class=\'skin-fallback\'>S</div>'">
+                </div>
+                <div class="staff-info">
+                    <div class="staff-name">SrSammy</div>
+                    <div class="staff-role role-helperplus">Helper+</div>
+                    <p class="staff-desc">Pilar de la comunidad de Arcanis. Siempre presente para ayudar a los jugadores y mantener el orden en el servidor.</p>
+                </div>
+            </div>
+            <!-- Vacante Mod -->
             <div class="staff-card">
                 <div class="skin-wrap" style="align-items:center;justify-content:center;">
                     <div style="font-size:4rem;opacity:0.2;margin-top:20px;">?</div>
                 </div>
                 <div class="staff-info">
-                    <div class="staff-name">Buscando Staff...</div>
-                    <div class="staff-role role-open">Mod / Helper</div>
-                    <p class="staff-desc">¿Quieres formar parte del equipo? Postúlate en nuestro Discord y únete a la leyenda.</p>
+                    <div class="staff-name">Buscando Moderador...</div>
+                    <div class="staff-role role-mod">Moderador</div>
+                    <p class="staff-desc">¿Quieres formar parte del equipo? Postúlate en nuestro Discord.</p>
+                </div>
+            </div>
+            <!-- Vacante Helper+ -->
+            <div class="staff-card">
+                <div class="skin-wrap" style="align-items:center;justify-content:center;">
+                    <div style="font-size:4rem;opacity:0.2;margin-top:20px;">?</div>
+                </div>
+                <div class="staff-info">
+                    <div class="staff-name">Buscando Helper+...</div>
+                    <div class="staff-role role-helperplus">Helper+</div>
+                    <p class="staff-desc">¿Quieres formar parte del equipo? Postúlate en nuestro Discord.</p>
+                </div>
+            </div>
+            <!-- Vacante Helper -->
+            <div class="staff-card">
+                <div class="skin-wrap" style="align-items:center;justify-content:center;">
+                    <div style="font-size:4rem;opacity:0.2;margin-top:20px;">?</div>
+                </div>
+                <div class="staff-info">
+                    <div class="staff-name">Buscando Helper...</div>
+                    <div class="staff-role role-helper">Helper</div>
+                    <p class="staff-desc">¿Quieres formar parte del equipo? Postúlate en nuestro Discord.</p>
                 </div>
             </div>
         </div>

@@ -1,1 +1,240 @@
-<h1>¡Hola, la página de Arcanis está en construcción!</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcanis Network | Sitio Oficial</title>
+    <style>
+        /* Estilos base (Diseño Oscuro Premium) */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121214;
+            color: #e1e1e6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Barra de Navegación */
+        header {
+            width: 100%;
+            background-color: #1a1a1e;
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+            border-bottom: 2px solid #8257e5;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: #a8a8b3;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #8257e5;
+        }
+
+        /* Sección Principal (Hero) */
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: #fff;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero h1 span {
+            color: #8257e5;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #a8a8b3;
+            margin-bottom: 30px;
+        }
+
+        /* Botón de IP Mágico */
+        .ip-button {
+            background-color: #8257e5;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+            box-shadow: 0 4px 15px rgba(130, 87, 229, 0.4);
+        }
+
+        .ip-button:hover {
+            background-color: #9466ff;
+            transform: scale(1.05);
+        }
+
+        .ip-button:active {
+            transform: scale(0.98);
+        }
+
+        /* Contenedores de Información */
+        .container {
+            max-width: 1000px;
+            width: 90%;
+            padding: 40px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: #fff;
+            border-bottom: 2px solid #29292e;
+            padding-bottom: 10px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #1a1a1e;
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid #29292e;
+            text-align: center;
+            transition: border-color 0.2s;
+        }
+
+        .card:hover {
+            border-color: #8257e5;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: #fff;
+        }
+
+        .card a {
+            display: inline-block;
+            margin-top: 15px;
+            color: #8257e5;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Pie de página */
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #1a1a1e;
+            width: 100%;
+            text-align: center;
+            color: #737380;
+            font-size: 0.9rem;
+            border-top: 1px solid #29292e;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <header>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#info">Información</a>
+            <a href="#staff">Staff</a>
+            <a href="https://arcanis-web.vercel.app" target="_blank" style="color: #04d361;">Tienda Tebex</a>
+        </nav>
+    </header>
+
+    <!-- SECCIÓN DE INICIO -->
+    <section class="hero" id="inicio">
+        <h1>Arcanis <span>Network</span></h1>
+        <p>¡Una experiencia Survival e Institucional única! Entra a nuestra comunidad y escribe tu propia historia.</p>
+        <!-- Al picarle copia la IP en automático -->
+        <button class="ip-button" onclick="copyIP()">IP: play.arcanismc.net</button>
+    </section>
+
+    <!-- SECCIÓN DE INFORMACIÓN -->
+    <div class="container" id="info">
+        <h2 class="section-title">¿Por qué jugar en Arcanis?</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Comunidad en Discord</h3>
+                <p>Únete a nuestro servidor de Discord para enterarte de eventos, actualizaciones y soporte técnico diario.</p>
+                <a href="#" target="_blank">Entrar al Discord →</a>
+            </div>
+            <div class="card">
+                <h3>Economía Estable</h3>
+                <p>Protege tus terrenos, vende ítems en el mercado global y compite para ser el jugador más rico del servidor.</p>
+            </div>
+            <div class="card">
+                <h3>Soporte 24/7</h3>
+                <p>Nuestro equipo de Staff está siempre listo para ayudarte a resolver dudas y reportar hackers.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN DE STAFF -->
+    <div class="container" id="staff">
+        <h2 class="section-title">Nuestro Equipo de Staff</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>JorgeDiego9</h3>
+                <p style="color: #ef4444; font-weight: bold;">Owner / Fundador</p>
+            </div>
+            <div class="card">
+                <h3>Armandrox</h3>
+                <p style="color: #3b82f6; font-weight: bold;">Co-Owner / Admin</p>
+            </div>
+            <div class="card">
+                <h3>Buscando Staff...</h3>
+                <p style="color: #10b981; font-weight: bold;">Mod / Helper</p>
+                <a href="#inicio">¡Postúlate aquí!</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Arcanis Network. Todos los derechos reservados. No afiliado con Mojang Synergies AB.</p>
+    </footer>
+
+    <!-- SCRIPT MÁGICO PARA COPIAR LA IP -->
+    <script>
+        function copyIP() {
+            const ipText = "play.arcanismc.net"; // Cambia esto por tu IP real después
+            navigator.clipboard.writeText(ipText).then(() => {
+                const btn = document.querySelector('.ip-button');
+                const originalText = btn.innerText;
+                btn.innerText = "¡IP Copiada con éxito! 🎉";
+                btn.style.backgroundColor = "#04d361";
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.style.backgroundColor = "#8257e5";
+                }, 2000);
+            }).catch(err => {
+                alert("No se pudo copiar automáticamente, la IP es: " + ipText);
+            });
+        }
+    </script>
+
+</body>
+</html>ss

@@ -11,8 +11,9 @@
         :root {
             --black: #080810;
             --card: #16162a;
-            --border: rgba(124, 58, 237, 0.18);
-            --border-hover: rgba(124, 58, 237, 0.5);
+            --card2: #0f0f1e;
+            --border: rgba(124,58,237,0.18);
+            --border-hover: rgba(124,58,237,0.5);
             --purple: #7c3aed;
             --purple-light: #9d5cff;
             --magenta: #d946ef;
@@ -32,7 +33,6 @@
             overflow-x: hidden;
         }
 
-        /* PARTÍCULAS */
         #particles-canvas {
             position: fixed;
             top: 0; left: 0;
@@ -41,13 +41,17 @@
             z-index: 0;
         }
 
-        /* HEADER */
+        /* ── HEADER ── */
         header {
             position: fixed;
             top: 0; left: 0; right: 0;
-            z-index: 100;
-            background: transparent;
-            padding: 20px 48px;
+            z-index: 200;
+            background: rgba(8,8,16,0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(124,58,237,0.12);
+            padding: 0 48px;
+            height: 62px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -55,39 +59,41 @@
 
         .nav-logo {
             font-family: var(--cinzel);
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 700;
             color: var(--white);
             text-decoration: none;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
         }
 
-        nav { display: flex; align-items: center; gap: 36px; }
+        nav { display: flex; align-items: center; gap: 8px; }
 
         nav a {
             font-family: var(--cinzel);
-            font-size: 0.78rem;
+            font-size: 0.7rem;
             font-weight: 600;
             letter-spacing: 1.5px;
             text-transform: uppercase;
             color: var(--muted);
             text-decoration: none;
-            transition: color 0.2s;
+            padding: 6px 12px;
+            border-radius: 5px;
+            transition: color 0.2s, background 0.2s;
         }
 
-        nav a:hover { color: var(--white); }
+        nav a:hover { color: var(--white); background: rgba(124,58,237,0.1); }
 
-        nav a.tienda {
+        nav a.nav-tienda {
             background: var(--purple);
             color: var(--white);
-            padding: 8px 20px;
-            border-radius: 6px;
+            padding: 7px 18px;
             transition: background 0.2s, transform 0.15s;
         }
 
-        nav a.tienda:hover { background: var(--purple-light); transform: scale(1.03); }
+        nav a.nav-tienda:hover { background: var(--purple-light); transform: scale(1.03); }
 
-        /* HERO CON CASTILLO */
+        /* ── HERO ── */
         .hero {
             position: relative;
             z-index: 1;
@@ -97,11 +103,10 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 100px 20px 60px;
+            padding: 80px 20px 60px;
             overflow: hidden;
         }
 
-        /* Imagen del castillo */
         .hero-bg {
             position: absolute;
             inset: 0;
@@ -112,22 +117,20 @@
             z-index: 0;
         }
 
-        /* Overlay oscuro degradado igual que Tebex */
         .hero-bg::after {
             content: '';
             position: absolute;
             inset: 0;
             background:
                 linear-gradient(to bottom,
-                    rgba(8,8,16,0.35) 0%,
-                    rgba(8,8,16,0.15) 40%,
-                    rgba(8,8,16,0.65) 75%,
+                    rgba(8,8,16,0.3) 0%,
+                    rgba(8,8,16,0.1) 35%,
+                    rgba(8,8,16,0.6) 72%,
                     rgba(8,8,16,1) 100%
                 ),
-                radial-gradient(ellipse 80% 60% at 50% 40%, rgba(124,58,237,0.12) 0%, transparent 70%);
+                radial-gradient(ellipse 80% 60% at 50% 40%, rgba(124,58,237,0.1) 0%, transparent 70%);
         }
 
-        /* Todo el contenido del hero va sobre el bg */
         .hero-content {
             position: relative;
             z-index: 2;
@@ -149,9 +152,9 @@
             letter-spacing: 0.5px;
             margin-bottom: 52px;
             max-width: 480px;
+            line-height: 1.7;
         }
 
-        /* IP + Discord row */
         .hero-info-row {
             display: flex;
             align-items: center;
@@ -168,30 +171,28 @@
             text-decoration: none;
         }
 
-        .hero-info-item .icon-wrap {
-            width: 42px; height: 42px;
+        .icon-wrap {
+            width: 44px; height: 44px;
             border-radius: 50%;
             background: rgba(124,58,237,0.2);
             border: 1px solid rgba(124,58,237,0.4);
             display: flex; align-items: center; justify-content: center;
             backdrop-filter: blur(4px);
+            flex-shrink: 0;
         }
 
-        .hero-info-item .icon-wrap svg {
-            width: 20px; height: 20px;
-            fill: rgba(248,248,255,0.8);
-        }
+        .icon-wrap svg { width: 20px; height: 20px; fill: rgba(248,248,255,0.85); }
 
-        .hero-info-item .info-label {
+        .info-label {
             font-family: var(--cinzel);
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             font-weight: 600;
             color: var(--white);
             letter-spacing: 1px;
         }
 
-        .hero-info-item .info-sub {
-            font-size: 0.75rem;
+        .info-sub {
+            font-size: 0.73rem;
             color: var(--purple-light);
             margin-top: 2px;
             transition: color 0.2s;
@@ -199,16 +200,16 @@
 
         .hero-info-item:hover .info-sub { color: var(--magenta); }
 
-        /* Contador */
         .player-count {
             margin-top: 44px;
             display: flex;
             align-items: center;
             gap: 10px;
             font-family: var(--cinzel);
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-            color: rgba(248,248,255,0.6);
+            font-size: 0.78rem;
+            letter-spacing: 1.5px;
+            color: rgba(248,248,255,0.55);
+            text-transform: uppercase;
         }
 
         .player-dot {
@@ -217,54 +218,108 @@
             background: #22c55e;
             box-shadow: 0 0 8px #22c55e;
             animation: pulse-dot 2s infinite;
+            flex-shrink: 0;
         }
 
-        @keyframes pulse-dot {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.3; }
-        }
-
+        @keyframes pulse-dot { 0%,100%{opacity:1} 50%{opacity:0.3} }
         #player-num { color: var(--white); font-weight: 700; }
 
-        /* SECCIONES */
-        .section {
-            position: relative;
-            z-index: 1;
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 80px 32px;
+        /* ── SCROLL HINT ── */
+        .scroll-hint {
+            position: absolute;
+            bottom: 32px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            opacity: 0.4;
+            animation: bounce 2.5s infinite;
         }
 
-        .section-title {
+        .scroll-hint span {
             font-family: var(--cinzel);
-            font-size: 1.8rem;
+            font-size: 0.6rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--white);
+        }
+
+        .scroll-hint svg { width: 18px; fill: var(--white); }
+
+        @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(6px)} }
+
+        /* ── BLOQUES / SECCIONES ── */
+        .block {
+            position: relative;
+            z-index: 1;
+            padding: 90px 32px;
+        }
+
+        .block-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .block-inner.narrow { max-width: 820px; }
+
+        .block-alt {
+            background: rgba(124,58,237,0.03);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        /* Eyebrow + title */
+        .eyebrow {
+            font-family: var(--cinzel);
+            font-size: 0.65rem;
+            letter-spacing: 4px;
+            color: var(--purple-light);
+            text-align: center;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .block-title {
+            font-family: var(--cinzel);
+            font-size: 1.75rem;
             font-weight: 700;
             text-align: center;
             letter-spacing: 2px;
             text-transform: uppercase;
-            margin-bottom: 16px;
             color: var(--white);
+            margin-bottom: 12px;
         }
 
-        .section-sub {
+        .block-sub {
             text-align: center;
             color: var(--muted);
-            font-size: 0.95rem;
-            margin-bottom: 56px;
+            font-size: 0.92rem;
+            margin-bottom: 52px;
+            line-height: 1.65;
         }
 
+        /* ── GRID ── */
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            gap: 18px;
         }
 
-        /* Cards de features */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 18px;
+        }
+
+        /* ── CARDS GENERALES ── */
         .card {
             background: var(--card);
             border: 1px solid var(--border);
             border-radius: 10px;
-            padding: 28px 24px;
+            padding: 26px 22px;
             transition: border-color 0.25s, transform 0.2s;
         }
 
@@ -272,30 +327,30 @@
 
         .card-icon {
             width: 44px; height: 44px;
-            background: rgba(124,58,237,0.12);
-            border: 1px solid rgba(124,58,237,0.25);
+            background: rgba(124,58,237,0.1);
+            border: 1px solid rgba(124,58,237,0.22);
             border-radius: 8px;
             display: flex; align-items: center; justify-content: center;
-            margin-bottom: 18px;
-            font-size: 22px;
+            margin-bottom: 16px;
+            font-size: 21px;
         }
 
         .card h3 {
             font-family: var(--cinzel);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 600;
             letter-spacing: 1px;
             color: var(--white);
-            margin-bottom: 10px;
+            margin-bottom: 9px;
             text-transform: uppercase;
         }
 
-        .card p { font-size: 0.88rem; color: var(--muted); line-height: 1.65; }
+        .card p { font-size: 0.86rem; color: var(--muted); line-height: 1.65; }
 
         .card a {
             display: inline-block;
-            margin-top: 16px;
-            font-size: 0.8rem;
+            margin-top: 14px;
+            font-size: 0.78rem;
             font-family: var(--cinzel);
             letter-spacing: 1px;
             color: var(--purple-light);
@@ -305,38 +360,10 @@
 
         .card a:hover { color: var(--magenta); }
 
-        /* HISTORIA */
-        .lore-section {
-            position: relative;
-            z-index: 1;
-            background: linear-gradient(180deg, transparent 0%, rgba(124,58,237,0.04) 50%, transparent 100%);
-            padding: 80px 32px;
-        }
-
-        .lore-inner { max-width: 900px; margin: 0 auto; }
-
-        .lore-eyebrow {
-            font-family: var(--cinzel);
-            font-size: 0.7rem;
-            letter-spacing: 4px;
-            color: var(--purple-light);
-            text-align: center;
-            text-transform: uppercase;
-            margin-bottom: 12px;
-        }
-
-        .lore-body {
-            font-size: 0.95rem;
-            color: var(--muted);
-            line-height: 1.85;
-            text-align: center;
-            max-width: 720px;
-            margin: 0 auto 48px;
-        }
-
+        /* ── HISTORIA / LORE ── */
         .lore-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 16px;
         }
 
@@ -344,7 +371,7 @@
             background: var(--card);
             border: 1px solid var(--border);
             border-radius: 10px;
-            padding: 24px 20px;
+            padding: 22px 18px;
             transition: border-color 0.25s;
         }
 
@@ -352,7 +379,7 @@
 
         .char-name {
             font-family: var(--cinzel);
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             font-weight: 700;
             color: var(--white);
             margin-bottom: 4px;
@@ -360,17 +387,194 @@
 
         .char-role {
             font-family: var(--cinzel);
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             letter-spacing: 2px;
             text-transform: uppercase;
-            margin-bottom: 12px;
+            margin-bottom: 11px;
         }
 
         .char-role.protagonist { color: var(--purple-light); }
         .char-role.antagonist { color: #ef4444; }
-        .lore-card p { font-size: 0.83rem; color: var(--muted); line-height: 1.65; }
+        .char-role.founders { color: var(--magenta); }
+        .lore-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.65; }
 
-        /* STAFF CON SKINS */
+        /* ── REGLAS ── */
+        .rules-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 36px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            font-family: var(--cinzel);
+            font-size: 0.72rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 9px 24px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--muted);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .tab-btn:hover { border-color: var(--border-hover); color: var(--white); }
+        .tab-btn.active { background: var(--purple); border-color: var(--purple); color: var(--white); }
+
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+
+        .rules-list { display: flex; flex-direction: column; gap: 10px; }
+
+        .rule-item {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px 20px;
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            transition: border-color 0.2s;
+        }
+
+        .rule-item:hover { border-color: var(--border-hover); }
+
+        .rule-num {
+            font-family: var(--cinzel);
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--purple-light);
+            min-width: 48px;
+            padding-top: 2px;
+        }
+
+        .rule-body {}
+
+        .rule-title {
+            font-family: var(--cinzel);
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 4px;
+            letter-spacing: 0.5px;
+        }
+
+        .rule-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.55; }
+
+        /* Sanciones */
+        .sanctions-box {
+            margin-top: 28px;
+            background: rgba(124,58,237,0.06);
+            border: 1px solid rgba(124,58,237,0.25);
+            border-radius: 10px;
+            padding: 24px 22px;
+        }
+
+        .sanctions-title {
+            font-family: var(--cinzel);
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--magenta);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .sanctions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 10px;
+        }
+
+        .sanction-item {
+            background: rgba(8,8,16,0.5);
+            border: 1px solid var(--border);
+            border-radius: 7px;
+            padding: 12px 14px;
+        }
+
+        .sanction-label {
+            font-family: var(--cinzel);
+            font-size: 0.65rem;
+            letter-spacing: 1px;
+            color: var(--purple-light);
+            margin-bottom: 4px;
+            text-transform: uppercase;
+        }
+
+        .sanction-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
+
+        /* ── GUÍAS ── */
+        .guide-coming {
+            text-align: center;
+            padding: 60px 20px;
+            background: var(--card);
+            border: 1px dashed rgba(124,58,237,0.3);
+            border-radius: 12px;
+        }
+
+        .guide-coming-icon { font-size: 3rem; margin-bottom: 16px; opacity: 0.5; }
+
+        .guide-coming h3 {
+            font-family: var(--cinzel);
+            font-size: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .guide-coming p { font-size: 0.88rem; color: var(--muted); }
+
+        .guide-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .guide-card-placeholder {
+            background: var(--card);
+            border: 1px dashed rgba(124,58,237,0.2);
+            border-radius: 10px;
+            padding: 24px 20px;
+            text-align: center;
+            opacity: 0.5;
+        }
+
+        .guide-card-placeholder .gc-icon { font-size: 1.8rem; margin-bottom: 10px; }
+
+        .guide-card-placeholder h4 {
+            font-family: var(--cinzel);
+            font-size: 0.78rem;
+            letter-spacing: 1px;
+            color: var(--white);
+            margin-bottom: 6px;
+        }
+
+        .guide-card-placeholder p { font-size: 0.78rem; color: var(--muted); }
+
+        .badge-soon {
+            display: inline-block;
+            font-family: var(--cinzel);
+            font-size: 0.6rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: rgba(217,70,239,0.12);
+            border: 1px solid rgba(217,70,239,0.3);
+            color: var(--magenta);
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+        }
+
+        /* ── STAFF ── */
         .staff-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -388,39 +592,33 @@
 
         .staff-card:hover { border-color: var(--border-hover); transform: translateY(-4px); }
 
-        /* Contenedor de la skin — recorta el busto (mitad superior del body) */
         .skin-wrap {
             width: 100%;
             height: 160px;
             overflow: hidden;
             position: relative;
-            background: linear-gradient(180deg, rgba(124,58,237,0.08) 0%, rgba(8,8,16,0.3) 100%);
+            background: linear-gradient(180deg, rgba(124,58,237,0.07) 0%, rgba(8,8,16,0.25) 100%);
             display: flex;
             align-items: flex-start;
             justify-content: center;
         }
 
-        /* La imagen de mc-heads /body/ tiene cabeza+torso+piernas.
-           Mostramos solo la mitad superior recortando con clip y posición */
         .skin-wrap img {
-            /* body image es aprox 200x400 o similar, escalamos alto */
-            height: 260px;
+            height: 265px;
             width: auto;
             margin-top: -10px;
             image-rendering: pixelated;
             filter: drop-shadow(0 4px 16px rgba(124,58,237,0.35));
         }
 
-        /* Degradado en la parte inferior para fundir con la card */
         .skin-wrap::after {
             content: '';
             position: absolute;
             bottom: 0; left: 0; right: 0;
-            height: 60px;
+            height: 65px;
             background: linear-gradient(to bottom, transparent, var(--card));
         }
 
-        /* Fallback cuando no carga la skin */
         .skin-fallback {
             width: 80px; height: 80px;
             border-radius: 50%;
@@ -431,54 +629,82 @@
             font-size: 2rem;
             font-weight: 700;
             color: var(--purple-light);
-            margin: 30px auto 10px;
+            margin: 28px auto 8px;
         }
 
-        .staff-info { padding: 16px 20px 24px; }
+        .staff-info { padding: 14px 20px 22px; }
 
         .staff-name {
             font-family: var(--cinzel);
-            font-size: 1rem;
+            font-size: 0.97rem;
             font-weight: 700;
             color: var(--white);
             letter-spacing: 1px;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
         }
 
         .staff-role {
             font-family: var(--cinzel);
-            font-size: 0.68rem;
+            font-size: 0.65rem;
             letter-spacing: 2px;
             text-transform: uppercase;
-            margin-bottom: 10px;
+            margin-bottom: 9px;
         }
 
         .role-owner { color: var(--magenta); }
         .role-coowner { color: var(--purple-light); }
         .role-open { color: #22c55e; }
+        .staff-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.55; }
 
-        .staff-desc { font-size: 0.83rem; color: var(--muted); line-height: 1.55; }
-
-        /* CTA */
-        .cta-section {
-            position: relative;
-            z-index: 1;
-            max-width: 860px;
-            margin: 0 auto;
-            padding: 60px 32px 100px;
+        /* ── TIENDA BLOCK ── */
+        .store-hero {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 56px 40px;
             text-align: center;
         }
 
+        .store-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 14px;
+            margin: 36px 0;
+        }
+
+        .store-cat {
+            background: rgba(124,58,237,0.07);
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            padding: 20px 14px;
+            text-align: center;
+            transition: border-color 0.2s, transform 0.15s;
+        }
+
+        .store-cat:hover { border-color: var(--border-hover); transform: translateY(-2px); }
+
+        .store-cat-icon { font-size: 1.8rem; margin-bottom: 10px; }
+
+        .store-cat-name {
+            font-family: var(--cinzel);
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--white);
+        }
+
+        /* ── CTA ── */
         .cta-box {
             background: var(--card);
             border: 1px solid var(--border);
             border-radius: 14px;
             padding: 60px 40px;
+            text-align: center;
         }
 
         .cta-title {
             font-family: var(--cinzel);
-            font-size: 1.6rem;
+            font-size: 1.55rem;
             font-weight: 700;
             letter-spacing: 2px;
             text-transform: uppercase;
@@ -486,17 +712,17 @@
             margin-bottom: 12px;
         }
 
-        .cta-sub { color: var(--muted); font-size: 0.95rem; margin-bottom: 36px; }
+        .cta-sub { color: var(--muted); font-size: 0.93rem; margin-bottom: 34px; }
 
-        .cta-buttons { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
+        .cta-buttons { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; }
 
         .btn-primary {
             background: var(--purple);
             color: var(--white);
             border: none;
-            padding: 13px 36px;
+            padding: 13px 34px;
             font-family: var(--cinzel);
-            font-size: 0.78rem;
+            font-size: 0.75rem;
             font-weight: 700;
             letter-spacing: 2px;
             text-transform: uppercase;
@@ -511,10 +737,10 @@
         .btn-secondary {
             background: transparent;
             color: var(--white);
-            border: 1px solid rgba(255,255,255,0.25);
-            padding: 13px 36px;
+            border: 1px solid rgba(255,255,255,0.22);
+            padding: 13px 34px;
             font-family: var(--cinzel);
-            font-size: 0.78rem;
+            font-size: 0.75rem;
             font-weight: 700;
             letter-spacing: 2px;
             text-transform: uppercase;
@@ -526,12 +752,12 @@
 
         .btn-secondary:hover { border-color: var(--white); transform: scale(1.04); }
 
-        /* FOOTER */
+        /* ── FOOTER ── */
         footer {
             position: relative;
             z-index: 1;
             border-top: 1px solid var(--border);
-            padding: 28px 48px;
+            padding: 26px 48px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -539,13 +765,13 @@
             gap: 12px;
         }
 
-        .footer-copy { font-size: 0.78rem; color: var(--muted); }
+        .footer-copy { font-size: 0.75rem; color: var(--muted); }
 
-        .footer-links { display: flex; gap: 24px; }
+        .footer-links { display: flex; gap: 20px; }
 
         .footer-links a {
             font-family: var(--cinzel);
-            font-size: 0.72rem;
+            font-size: 0.68rem;
             letter-spacing: 1px;
             color: var(--muted);
             text-decoration: none;
@@ -554,7 +780,7 @@
 
         .footer-links a:hover { color: var(--white); }
 
-        /* TOAST */
+        /* ── TOAST ── */
         #toast {
             position: fixed;
             bottom: 32px;
@@ -564,9 +790,9 @@
             border: 1px solid rgba(124,58,237,0.5);
             color: var(--white);
             font-family: var(--cinzel);
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             letter-spacing: 1px;
-            padding: 12px 28px;
+            padding: 11px 26px;
             border-radius: 8px;
             z-index: 999;
             transition: transform 0.3s ease, opacity 0.3s ease;
@@ -576,23 +802,12 @@
 
         #toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
 
-        /* DIVISOR */
-        .divider {
-            position: relative;
-            z-index: 1;
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 32px;
-        }
-
-        .divider hr { border: none; border-top: 1px solid var(--border); }
-
-        @media (max-width: 600px) {
-            header { padding: 18px 20px; }
-            nav { gap: 16px; }
-            nav a:not(.tienda) { display: none; }
+        @media (max-width: 680px) {
+            header { padding: 0 18px; }
+            nav a:not(.nav-tienda) { display: none; }
             .hero-info-row { gap: 28px; }
             footer { flex-direction: column; text-align: center; }
+            .block { padding: 60px 18px; }
         }
     </style>
 </head>
@@ -600,19 +815,21 @@
 
 <canvas id="particles-canvas"></canvas>
 
-<!-- HEADER -->
+<!-- ══ HEADER ══ -->
 <header>
     <a class="nav-logo" href="#inicio">Arcanis</a>
     <nav>
         <a href="#inicio">Inicio</a>
-        <a href="#features">Modos</a>
         <a href="#historia">Historia</a>
+        <a href="#guias">Guías</a>
+        <a href="#reglas">Reglas</a>
         <a href="#staff">Staff</a>
-        <a href="https://arcanis-server-store.tebex.io" target="_blank" class="tienda">Tienda</a>
+        <a href="#tienda">Tienda</a>
+        <a href="https://arcanis-server-store.tebex.io" target="_blank" class="nav-tienda">Ir a la Tienda →</a>
     </nav>
 </header>
 
-<!-- HERO -->
+<!-- ══ BLOQUE 1 — HERO / INICIO ══ -->
 <section class="hero" id="inicio">
     <div class="hero-bg"></div>
     <div class="hero-content">
@@ -627,7 +844,6 @@
         <p class="hero-sub">Una experiencia Survival e Institucional única.<br>Entra a nuestra comunidad y escribe tu propia historia.</p>
 
         <div class="hero-info-row">
-            <!-- IP -->
             <div class="hero-info-item" onclick="copyIP()">
                 <div class="icon-wrap">
                     <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
@@ -637,8 +853,6 @@
                     <div class="info-sub" id="ip-sub">Click to Copy</div>
                 </div>
             </div>
-
-            <!-- Discord -->
             <a class="hero-info-item" href="https://discord.gg/MzPWguHQg" target="_blank">
                 <div class="icon-wrap">
                     <svg viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.043.033.055a19.935 19.935 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.138 13.138 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
@@ -655,58 +869,62 @@
             <span><span id="player-num">—</span> jugadores en línea</span>
         </div>
     </div>
+
+    <div class="scroll-hint">
+        <span>Explorar</span>
+        <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+    </div>
 </section>
 
-<!-- FEATURES -->
-<div class="divider"><hr></div>
-
-<section class="section" id="features">
-    <p class="section-title">¿Por qué jugar en Arcanis?</p>
-    <p class="section-sub">Todo lo que necesitas para vivir una aventura inolvidable.</p>
-    <div class="grid-3">
-        <div class="card">
-            <div class="card-icon">⚔️</div>
-            <h3>Survival Inmersivo</h3>
-            <p>Protege tus terrenos, construye tu base y sobrevive en un mundo lleno de desafíos y secretos por descubrir.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon">💰</div>
-            <h3>Economía Estable</h3>
-            <p>Vende ítems en el mercado global, compite en el top de riqueza y domina la economía del servidor.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon">🏆</div>
-            <h3>Misiones y Rangos</h3>
-            <p>Completa misiones diarias, semanales y estándar. Sube de rango y desbloquea beneficios exclusivos.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon">🌐</div>
-            <h3>Comunidad Discord</h3>
-            <p>Únete a nuestro servidor de Discord para eventos, noticias, soporte y mucho más.</p>
-            <a href="https://discord.gg/MzPWguHQg" target="_blank">Unirse al Discord →</a>
-        </div>
-        <div class="card">
-            <div class="card-icon">🛡️</div>
-            <h3>Staff Activo</h3>
-            <p>Nuestro equipo modera el servidor con sistema de advertencias justo y tickets de soporte 24/7.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon">🛒</div>
-            <h3>Tienda Oficial</h3>
-            <p>Consigue rangos, llaves y más en nuestra tienda. Todo lo que compras apoya directamente al servidor.</p>
-            <a href="https://arcanis-server-store.tebex.io" target="_blank">Ver Tienda →</a>
+<!-- ══ BLOQUE 2 — ¿POR QUÉ ARCANIS? ══ -->
+<section class="block" id="porque">
+    <div class="block-inner">
+        <p class="eyebrow">El servidor</p>
+        <h2 class="block-title">¿Por qué elegir Arcanis?</h2>
+        <p class="block-sub">Todo lo que necesitas para vivir una aventura inolvidable en un solo lugar.</p>
+        <div class="grid-3">
+            <div class="card">
+                <div class="card-icon">⚔️</div>
+                <h3>Survival Inmersivo</h3>
+                <p>Protege tus terrenos, construye tu base y sobrevive en un mundo lleno de desafíos y secretos por descubrir.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">💰</div>
+                <h3>Economía Estable</h3>
+                <p>Vende ítems en el mercado global, compite en el top de riqueza y domina la economía del servidor.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🏆</div>
+                <h3>Misiones y Rangos</h3>
+                <p>Completa misiones diarias, semanales y estándar. Sube de rango y desbloquea beneficios exclusivos.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🌐</div>
+                <h3>Comunidad Discord</h3>
+                <p>Únete a nuestro servidor de Discord para eventos, noticias, soporte y mucho más.</p>
+                <a href="https://discord.gg/MzPWguHQg" target="_blank">Unirse al Discord →</a>
+            </div>
+            <div class="card">
+                <div class="card-icon">🛡️</div>
+                <h3>Staff Activo</h3>
+                <p>Nuestro equipo modera el servidor con sistema de advertencias justo y tickets de soporte 24/7.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🛒</div>
+                <h3>Tienda Oficial</h3>
+                <p>Consigue rangos, llaves y más. Todo lo que compras apoya directamente al servidor.</p>
+                <a href="https://arcanis-server-store.tebex.io" target="_blank">Ver Tienda →</a>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- HISTORIA -->
-<div class="divider"><hr></div>
-
-<section class="lore-section" id="historia">
-    <div class="lore-inner">
-        <p class="lore-eyebrow">La leyenda de Arcanis</p>
-        <p class="section-title" style="margin-bottom:16px;">El Mundo que te Espera</p>
-        <p class="lore-body">El mundo de Arcanis guarda secretos más antiguos que el tiempo mismo.</p>
+<!-- ══ BLOQUE 3 — HISTORIA ══ -->
+<section class="block block-alt" id="historia">
+    <div class="block-inner">
+        <p class="eyebrow">La leyenda de Arcanis</p>
+        <h2 class="block-title">El Mundo que te Espera</h2>
+        <p class="block-sub">El mundo de Arcanis guarda secretos más antiguos que el tiempo mismo.</p>
 
         <div class="lore-cards">
             <div class="lore-card">
@@ -719,129 +937,272 @@
                 <div class="char-role antagonist">El Ángel Caído — Antagonista</div>
                 <p>Prodigio nacido en Arcanis cuya obsesión por la magia oscura lo transformó en la mayor amenaza que el mundo había conocido. Frío, calculador e implacable.</p>
             </div>
-            <div class="lore-card" style="border-color:rgba(217,70,239,0.25);">
-                <div style="font-size:1.4rem;margin-bottom:10px;">✨</div>
+            <div class="lore-card" style="border-color:rgba(217,70,239,0.2);">
+                <div style="font-size:1.3rem;margin-bottom:8px;">✨</div>
                 <div class="char-name">Armandrox & JorgeDiego9</div>
-                <div class="char-role" style="color:var(--magenta);">Los Dioses Fundadores</div>
+                <div class="char-role founders">Los Dioses Fundadores</div>
                 <p>Los creadores originales de Arcanis. Ascendieron al Cielo pero nunca abandonaron su mundo. Guían desde las sombras, fieles al plan que tejieron antes de partir.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- STAFF -->
-<div class="divider"><hr></div>
+<!-- ══ BLOQUE 4 — GUÍAS ══ -->
+<section class="block" id="guias">
+    <div class="block-inner">
+        <p class="eyebrow">Aprende a jugar</p>
+        <h2 class="block-title">Guías del Servidor</h2>
+        <p class="block-sub">Todo lo que necesitas saber para comenzar tu aventura en Arcanis.</p>
 
-<section class="section" id="staff">
-    <p class="section-title">Nuestro Equipo de Staff</p>
-    <p class="section-sub">Las personas detrás de Arcanis.</p>
-    <div class="staff-grid">
-
-        <!-- Armandrox — Owner -->
-        <div class="staff-card">
-            <div class="skin-wrap">
-                <img
-                    src="https://mc-heads.net/body/Armandrox12"
-                    alt="Skin de Armandrox12"
-                    onerror="this.parentElement.innerHTML='<div class=\'skin-fallback\'>A</div>'"
-                >
+        <div class="guide-cards">
+            <div class="guide-card-placeholder">
+                <div class="badge-soon">Próximamente</div>
+                <div class="gc-icon">🗺️</div>
+                <h4>Cómo Conectarte</h4>
+                <p>Guía paso a paso para unirte al servidor.</p>
             </div>
-            <div class="staff-info">
-                <div class="staff-name">Armandrox</div>
-                <div class="staff-role role-owner">Owner / Fundador</div>
-                <p class="staff-desc">El creador original de Arcanis. Arquitecto del mundo y de cada sistema que lo sustenta.</p>
+            <div class="guide-card-placeholder">
+                <div class="badge-soon">Próximamente</div>
+                <div class="gc-icon">⌨️</div>
+                <h4>Comandos Básicos</h4>
+                <p>Lista de todos los comandos esenciales.</p>
             </div>
-        </div>
-
-        <!-- JorgeDiego9 — Co-Owner -->
-        <div class="staff-card">
-            <div class="skin-wrap">
-                <img
-                    src="https://mc-heads.net/body/JorgeDiego9"
-                    alt="Skin de JorgeDiego9"
-                    onerror="this.parentElement.innerHTML='<div class=\'skin-fallback\'>J</div>'"
-                >
+            <div class="guide-card-placeholder">
+                <div class="badge-soon">Próximamente</div>
+                <div class="gc-icon">💎</div>
+                <h4>Sistema de Rangos</h4>
+                <p>Cómo subir de rango y sus beneficios.</p>
             </div>
-            <div class="staff-info">
-                <div class="staff-name">JorgeDiego9</div>
-                <div class="staff-role role-coowner">Co-Owner / Admin</div>
-                <p class="staff-desc">Co-fundador y desarrollador principal. Encargado de la infraestructura, el bot y la experiencia del servidor.</p>
+            <div class="guide-card-placeholder">
+                <div class="badge-soon">Próximamente</div>
+                <div class="gc-icon">📜</div>
+                <h4>Sistema de Misiones</h4>
+                <p>Completa misiones y gana recompensas.</p>
             </div>
         </div>
 
-        <!-- Vacante -->
-        <div class="staff-card">
-            <div class="skin-wrap" style="align-items:center; justify-content:center;">
-                <div style="font-size:4rem; opacity:0.25; margin-top:20px;">?</div>
-            </div>
-            <div class="staff-info">
-                <div class="staff-name">Buscando Staff...</div>
-                <div class="staff-role role-open">Mod / Helper</div>
-                <p class="staff-desc">¿Quieres formar parte del equipo? Postúlate en nuestro Discord y únete a la leyenda.</p>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<!-- CTA FINAL -->
-<section class="cta-section">
-    <div class="cta-box">
-        <p class="cta-title">¿Listo para escribir tu propia historia?</p>
-        <p class="cta-sub">Únete a Arcanis y forma parte de la leyenda.</p>
-        <div class="cta-buttons">
-            <a class="btn-primary" href="https://arcanis-server-store.tebex.io" target="_blank">Ver Rangos</a>
-            <a class="btn-secondary" href="https://discord.gg/MzPWguHQg" target="_blank">Unirse al Discord</a>
+        <div class="guide-coming">
+            <div class="guide-coming-icon">🔧</div>
+            <h3>Guías en preparación</h3>
+            <p>Nuestro equipo está trabajando en guías completas y detalladas.<br>Mantente atento a nuestro Discord para las novedades.</p>
         </div>
     </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ══ BLOQUE 5 — REGLAS ══ -->
+<section class="block block-alt" id="reglas">
+    <div class="block-inner narrow">
+        <p class="eyebrow">Normas de convivencia</p>
+        <h2 class="block-title">Reglas de Arcanis</h2>
+        <p class="block-sub">Para mantener una comunidad sana, divertida y respetuosa. Al unirte, aceptas estas reglas.</p>
+
+        <div class="rules-tabs">
+            <button class="tab-btn active" onclick="switchTab('mc')">⛏ Servidor Minecraft</button>
+            <button class="tab-btn" onclick="switchTab('dc')">💬 Discord</button>
+        </div>
+
+        <!-- TAB MC -->
+        <div class="tab-content active" id="tab-mc">
+            <div class="rules-list">
+                <div class="rule-item"><div class="rule-num">01</div><div class="rule-body"><div class="rule-title">Respeto ante todo</div><div class="rule-desc">Trata a todos con respeto. No se toleran insultos, discriminación, burlas ni actitudes tóxicas.</div></div></div>
+                <div class="rule-item"><div class="rule-num">02</div><div class="rule-body"><div class="rule-title">Prohibido hacks o mods con ventaja</div><div class="rule-desc">Kill aura, speed hacks, x-ray, aimbot, fly hacks, auto-clicker y similares están prohibidos.</div></div></div>
+                <div class="rule-item"><div class="rule-num">03</div><div class="rule-body"><div class="rule-title">Nada de spam</div><div class="rule-desc">No envíes mensajes repetidos ni inundes el chat.</div></div></div>
+                <div class="rule-item"><div class="rule-num">04</div><div class="rule-body"><div class="rule-title">Sin publicidad no autorizada</div><div class="rule-desc">No publicites otros servidores o comunidades sin autorización del staff.</div></div></div>
+                <div class="rule-item"><div class="rule-num">05</div><div class="rule-body"><div class="rule-title">Lenguaje moderado</div><div class="rule-desc">Evita groserías excesivas o lenguaje ofensivo hacia otros jugadores.</div></div></div>
+                <div class="rule-item"><div class="rule-num">06</div><div class="rule-body"><div class="rule-title">Prohibidas trampas y abuso de bugs</div><div class="rule-desc">No engañes en tratos ni explotes bugs. Repórtalos al staff.</div></div></div>
+                <div class="rule-item"><div class="rule-num">07</div><div class="rule-body"><div class="rule-title">No al griefing ni al robo</div><div class="rule-desc">Destruir construcciones o robar ítems está terminantemente prohibido.</div></div></div>
+                <div class="rule-item"><div class="rule-num">08</div><div class="rule-body"><div class="rule-title">Respeta las zonas protegidas</div><div class="rule-desc">No modifiques áreas protegidas o el spawn sin permiso del staff.</div></div></div>
+                <div class="rule-item"><div class="rule-num">09</div><div class="rule-body"><div class="rule-title">Obedece al staff</div><div class="rule-desc">Las decisiones del staff son definitivas. Apela por los canales correctos.</div></div></div>
+                <div class="rule-item"><div class="rule-num">10</div><div class="rule-body"><div class="rule-title">Nombre de usuario apropiado</div><div class="rule-desc">Sin insultos ni contenido inapropiado en tu nombre de usuario.</div></div></div>
+            </div>
+            <div class="sanctions-box">
+                <div class="sanctions-title">⚠ Sistema de Sanciones</div>
+                <div class="sanctions-grid">
+                    <div class="sanction-item"><div class="sanction-label">1ª infracción leve</div><div class="sanction-desc">Advertencia verbal por chat o Discord.</div></div>
+                    <div class="sanction-item"><div class="sanction-label">2ª infracción</div><div class="sanction-desc">Mute temporal o kick del servidor.</div></div>
+                    <div class="sanction-item"><div class="sanction-label">3ª infracción</div><div class="sanction-desc">Ban temporal a criterio del staff.</div></div>
+                    <div class="sanction-item" style="border-color:rgba(239,68,68,0.3);"><div class="sanction-label" style="color:#ef4444;">Infracción grave</div><div class="sanction-desc">Ban permanente. Incluye hacks, griefing masivo, NSFW, evasión de ban.</div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB DC -->
+        <div class="tab-content" id="tab-dc">
+            <div class="rules-list">
+                <div class="rule-item"><div class="rule-num">01</div><div class="rule-body"><div class="rule-title">Respeto mutuo</div><div class="rule-desc">No se tolera acoso, bullying, discriminación, racismo ni homofobia en ningún canal.</div></div></div>
+                <div class="rule-item"><div class="rule-num">02</div><div class="rule-body"><div class="rule-title">Usa los canales correctos</div><div class="rule-desc">Cada canal tiene un propósito específico, respétalo.</div></div></div>
+                <div class="rule-item"><div class="rule-num">03</div><div class="rule-body"><div class="rule-title">Sin spam ni flood</div><div class="rule-desc">No envíes mensajes repetidos ni abuses de los emojis.</div></div></div>
+                <div class="rule-item"><div class="rule-num">04</div><div class="rule-body"><div class="rule-title">No menciones al staff innecesariamente</div><div class="rule-desc">Usa los canales de soporte y espera con paciencia.</div></div></div>
+                <div class="rule-item"><div class="rule-num">05</div><div class="rule-body"><div class="rule-title">Lenguaje apropiado</div><div class="rule-desc">Groserías moderadas toleradas, insultos directos no.</div></div></div>
+                <div class="rule-item"><div class="rule-num">06</div><div class="rule-body"><div class="rule-title">Sin contenido NSFW</div><div class="rule-desc">Prohibido contenido sexual o violento. Ban inmediato sin advertencia.</div></div></div>
+                <div class="rule-item"><div class="rule-num">07</div><div class="rule-body"><div class="rule-title">Prohibida la publicidad no autorizada</div><div class="rule-desc">Sin publicitar otros servidores, canales o proyectos sin permiso.</div></div></div>
+                <div class="rule-item"><div class="rule-num">08</div><div class="rule-body"><div class="rule-title">No compartas información personal ajena</div><div class="rule-desc">Prohibido compartir fotos, nombres reales o ubicaciones sin consentimiento.</div></div></div>
+                <div class="rule-item"><div class="rule-num">09</div><div class="rule-body"><div class="rule-title">Sin cuentas alternativas</div><div class="rule-desc">Regresar con otra cuenta tras un ban resultará en ban permanente.</div></div></div>
+                <div class="rule-item"><div class="rule-num">10</div><div class="rule-body"><div class="rule-title">Sigue las normas de Discord</div><div class="rule-desc">Todos deben cumplir los Términos de Servicio oficiales de Discord.</div></div></div>
+            </div>
+            <div class="sanctions-box">
+                <div class="sanctions-title">⚠ Sistema de Sanciones</div>
+                <div class="sanctions-grid">
+                    <div class="sanction-item"><div class="sanction-label">1ª infracción leve</div><div class="sanction-desc">Advertencia verbal por chat o Discord.</div></div>
+                    <div class="sanction-item"><div class="sanction-label">2ª infracción</div><div class="sanction-desc">Mute temporal o kick del servidor.</div></div>
+                    <div class="sanction-item"><div class="sanction-label">3ª infracción</div><div class="sanction-desc">Ban temporal a criterio del staff.</div></div>
+                    <div class="sanction-item" style="border-color:rgba(239,68,68,0.3);"><div class="sanction-label" style="color:#ef4444;">Infracción grave</div><div class="sanction-desc">Ban permanente. Incluye acoso, NSFW, evasión de ban.</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══ BLOQUE 6 — STAFF ══ -->
+<section class="block" id="staff">
+    <div class="block-inner">
+        <p class="eyebrow">El equipo</p>
+        <h2 class="block-title">Nuestro Staff</h2>
+        <p class="block-sub">Las personas detrás de Arcanis.</p>
+        <div class="staff-grid">
+            <div class="staff-card">
+                <div class="skin-wrap">
+                    <img src="https://mc-heads.net/body/Armandrox12" alt="Skin Armandrox12"
+                        onerror="this.parentElement.innerHTML='<div class=\'skin-fallback\'>A</div>'">
+                </div>
+                <div class="staff-info">
+                    <div class="staff-name">Armandrox</div>
+                    <div class="staff-role role-owner">Owner / Fundador</div>
+                    <p class="staff-desc">El creador original de Arcanis. Arquitecto del mundo y de cada sistema que lo sustenta.</p>
+                </div>
+            </div>
+            <div class="staff-card">
+                <div class="skin-wrap">
+                    <img src="https://mc-heads.net/body/JorgeDiego9" alt="Skin JorgeDiego9"
+                        onerror="this.parentElement.innerHTML='<div class=\'skin-fallback\'>J</div>'">
+                </div>
+                <div class="staff-info">
+                    <div class="staff-name">JorgeDiego9</div>
+                    <div class="staff-role role-coowner">Co-Owner / Admin</div>
+                    <p class="staff-desc">Co-fundador y desarrollador principal. Encargado de la infraestructura, el bot y la experiencia del servidor.</p>
+                </div>
+            </div>
+            <div class="staff-card">
+                <div class="skin-wrap" style="align-items:center;justify-content:center;">
+                    <div style="font-size:4rem;opacity:0.2;margin-top:20px;">?</div>
+                </div>
+                <div class="staff-info">
+                    <div class="staff-name">Buscando Staff...</div>
+                    <div class="staff-role role-open">Mod / Helper</div>
+                    <p class="staff-desc">¿Quieres formar parte del equipo? Postúlate en nuestro Discord y únete a la leyenda.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══ BLOQUE 7 — TIENDA ══ -->
+<section class="block block-alt" id="tienda">
+    <div class="block-inner">
+        <p class="eyebrow">Apoya el servidor</p>
+        <h2 class="block-title">Tienda Oficial</h2>
+        <p class="block-sub">Todo lo que compras va directamente al mantenimiento y mejora del servidor.</p>
+
+        <div class="store-hero">
+            <div class="store-categories">
+                <div class="store-cat">
+                    <div class="store-cat-icon">👑</div>
+                    <div class="store-cat-name">Rangos Permanentes</div>
+                </div>
+                <div class="store-cat">
+                    <div class="store-cat-icon">⚡</div>
+                    <div class="store-cat-name">Ascenso a Rango</div>
+                </div>
+                <div class="store-cat">
+                    <div class="store-cat-icon">⏳</div>
+                    <div class="store-cat-name">Rangos Temporales</div>
+                </div>
+                <div class="store-cat">
+                    <div class="store-cat-icon">🗝️</div>
+                    <div class="store-cat-name">Llaves</div>
+                </div>
+                <div class="store-cat">
+                    <div class="store-cat-icon">🏷️</div>
+                    <div class="store-cat-name">Tags</div>
+                </div>
+            </div>
+            <a class="btn-primary" href="https://arcanis-server-store.tebex.io" target="_blank">Ver Todos los Productos →</a>
+        </div>
+    </div>
+</section>
+
+<!-- ══ CTA FINAL ══ -->
+<section class="block">
+    <div class="block-inner narrow">
+        <div class="cta-box">
+            <p class="cta-title">¿Listo para escribir tu propia historia?</p>
+            <p class="cta-sub">Únete a Arcanis y forma parte de la leyenda.</p>
+            <div class="cta-buttons">
+                <a class="btn-primary" href="https://arcanis-server-store.tebex.io" target="_blank">Ver Rangos</a>
+                <a class="btn-secondary" href="https://discord.gg/MzPWguHQg" target="_blank">Unirse al Discord</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
 <footer>
     <div class="footer-copy">&copy; 2026 Arcanis Network. Todos los derechos reservados. No afiliado con Mojang Synergies AB.</div>
     <div class="footer-links">
+        <a href="#historia">Historia</a>
+        <a href="#reglas">Reglas</a>
+        <a href="#staff">Staff</a>
         <a href="https://arcanis-server-store.tebex.io" target="_blank">Tienda</a>
         <a href="https://discord.gg/MzPWguHQg" target="_blank">Discord</a>
-        <a href="#staff">Staff</a>
     </div>
 </footer>
 
 <div id="toast">¡IP Copiada! 🎉</div>
 
 <script>
+/* ── PARTÍCULAS QUE SUBEN ── */
 (function() {
     const canvas = document.getElementById('particles-canvas');
     const ctx = canvas.getContext('2d');
     let particles = [];
-    const COUNT = 55;
+    const COUNT = 40;
 
     function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
 
-    function rndParticle() {
+    function newParticle() {
         return {
             x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height,
-            r: Math.random() * 1.8 + 0.4,
-            vx: (Math.random() - 0.5) * 0.25,
-            vy: (Math.random() - 0.5) * 0.25,
-            alpha: Math.random() * 0.55 + 0.1
+            y: canvas.height + Math.random() * 40,
+            r: Math.random() * 1.6 + 0.5,
+            speed: Math.random() * 0.6 + 0.3,
+            alpha: Math.random() * 0.5 + 0.2,
+            drift: (Math.random() - 0.5) * 0.3
         };
     }
 
-    function init() { resize(); particles = Array.from({ length: COUNT }, rndParticle); }
+    function init() { resize(); particles = Array.from({ length: COUNT }, newParticle); }
 
     function draw() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
+        const half = canvas.height * 0.5;
+
         particles.forEach(p => {
+            /* fade out conforme sube — desaparece en la mitad de la pantalla */
+            const progress = 1 - (p.y / canvas.height);
+            const fade = progress < 0.5 ? p.alpha : p.alpha * (1 - (progress - 0.5) / 0.5);
+
             ctx.beginPath();
             ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(217,70,239,${p.alpha})`;
+            ctx.fillStyle = `rgba(217,70,239,${Math.max(0, fade)})`;
             ctx.fill();
-            p.x += p.vx; p.y += p.vy;
-            if (p.x < 0) p.x = canvas.width;
-            if (p.x > canvas.width) p.x = 0;
-            if (p.y < 0) p.y = canvas.height;
-            if (p.y > canvas.height) p.y = 0;
+
+            p.y -= p.speed;
+            p.x += p.drift;
+
+            /* reciclar cuando llegan a la mitad o salen por los lados */
+            if (p.y < half || p.x < -5 || p.x > canvas.width + 5) {
+                Object.assign(p, newParticle());
+            }
         });
         requestAnimationFrame(draw);
     }
@@ -850,6 +1211,15 @@
     init(); draw();
 })();
 
+/* ── TABS DE REGLAS ── */
+function switchTab(tab) {
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+    document.getElementById('tab-' + tab).classList.add('active');
+    event.currentTarget.classList.add('active');
+}
+
+/* ── COPIAR IP ── */
 function copyIP() {
     navigator.clipboard.writeText('arcanis.servemc.net').then(() => {
         document.getElementById('ip-sub').textContent = '¡Copiada!';
@@ -862,6 +1232,7 @@ function copyIP() {
     }).catch(() => alert('IP: arcanis.servemc.net | Puerto: 24598'));
 }
 
+/* ── CONTADOR JUGADORES ── */
 async function fetchPlayers() {
     try {
         const r = await fetch('https://api.mcsrvstat.us/3/arcanis.servemc.net:24598');

@@ -228,6 +228,21 @@
         .sanction-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
 
         /* GUÍAS */
+        .guide-cards-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px; }
+        .guide-card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:28px 24px; text-decoration:none; color:var(--white); display:flex; gap:18px; align-items:flex-start; transition:border-color 0.25s, transform 0.2s, box-shadow 0.25s; }
+        .guide-card:hover { border-color:var(--border-hover); transform:translateY(-4px); box-shadow:0 8px 32px rgba(124,58,237,0.12); }
+        .guide-card-icon { font-size:2rem; flex-shrink:0; width:52px; height:52px; background:rgba(124,58,237,0.1); border:1px solid rgba(124,58,237,0.22); border-radius:10px; display:flex; align-items:center; justify-content:center; }
+        .guide-card-body h4 { font-family:var(--cinzel); font-size:0.88rem; font-weight:700; letter-spacing:0.5px; color:var(--white); margin-bottom:8px; text-transform:uppercase; }
+        .guide-card-body p { font-size:0.82rem; color:var(--muted); line-height:1.6; margin-bottom:12px; }
+        .guide-card-link { font-family:var(--cinzel); font-size:0.72rem; letter-spacing:1px; color:var(--purple-light); transition:color 0.2s; }
+        .guide-card:hover .guide-card-link { color:var(--magenta); }
+        a.guide-card { display:flex; gap:18px; align-items:flex-start; background:var(--card); border:1px solid var(--border); border-radius:10px; padding:24px 22px; text-decoration:none; color:var(--white); transition:border-color 0.25s, transform 0.2s, box-shadow 0.25s; }
+        a.guide-card:hover { border-color:var(--border-hover); transform:translateY(-4px); box-shadow:0 8px 32px rgba(124,58,237,0.12); }
+        .guide-card-icon { font-size:2rem; flex-shrink:0; width:52px; height:52px; background:rgba(124,58,237,0.1); border:1px solid rgba(124,58,237,0.22); border-radius:8px; display:flex; align-items:center; justify-content:center; }
+        .guide-card-body h3 { font-family:var(--cinzel); font-size:0.85rem; font-weight:600; letter-spacing:1px; color:var(--white); margin-bottom:8px; text-transform:uppercase; }
+        .guide-card-body p { font-size:0.83rem; color:var(--muted); line-height:1.6; margin-bottom:12px; }
+        .guide-card-link { font-family:var(--cinzel); font-size:0.75rem; letter-spacing:1px; color:var(--purple-light); transition:color 0.2s; }
+        a.guide-card:hover .guide-card-link { color:var(--magenta); }
         .guide-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 24px; }
         .guide-card-placeholder { background: var(--card); border: 1px dashed rgba(124,58,237,0.2); border-radius: 10px; padding: 24px 20px; text-align: center; opacity: 0.55; }
         .guide-card-placeholder .gc-icon { font-size: 1.8rem; margin-bottom: 10px; }
@@ -484,17 +499,56 @@
     <div class="block-inner">
         <p class="eyebrow reveal">Aprende a jugar</p>
         <h2 class="block-title reveal">Guías del Servidor</h2>
-        <p class="block-sub reveal">Todo lo que necesitas saber para comenzar tu aventura en Arcanis.</p>
-        <div class="guide-cards">
-            <div class="guide-card-placeholder reveal reveal-delay-1"><div class="badge-soon">Próximamente</div><div class="gc-icon">🗺️</div><h4>Cómo Conectarte</h4><p>Guía paso a paso para unirte al servidor.</p></div>
-            <div class="guide-card-placeholder reveal reveal-delay-2"><div class="badge-soon">Próximamente</div><div class="gc-icon">⌨️</div><h4>Comandos Básicos</h4><p>Lista de todos los comandos esenciales.</p></div>
-            <div class="guide-card-placeholder reveal reveal-delay-3"><div class="badge-soon">Próximamente</div><div class="gc-icon">💎</div><h4>Sistema de Rangos</h4><p>Cómo obtener rangos y sus beneficios.</p></div>
-            <div class="guide-card-placeholder reveal reveal-delay-4"><div class="badge-soon">Próximamente</div><div class="gc-icon">📜</div><h4>Misiones y Desafíos</h4><p>Completa misiones y gana llaves para crates.</p></div>
-        </div>
-        <div class="guide-coming reveal">
-            <div class="guide-coming-icon">🔧</div>
-            <h3>Guías en preparación</h3>
-            <p>Nuestro equipo está trabajando en guías completas antes del lanzamiento en Diciembre.<br>Mantente atento a nuestro Discord para las novedades.</p>
+        <p class="block-sub reveal">Todo lo que necesitas saber para comenzar tu aventura en Arcanis. Haz clic en cualquier guía para verla completa.</p>
+        <div class="grid-3">
+            <a href="guia-conexion.html" class="guide-card reveal reveal-delay-1">
+                <div class="guide-card-icon">🗺️</div>
+                <div class="guide-card-body">
+                    <h3>Cómo Conectarte</h3>
+                    <p>Guía paso a paso para unirte al servidor, compatible con Java y Bedrock.</p>
+                    <span class="guide-card-link">Leer guía →</span>
+                </div>
+            </a>
+            <a href="guia-comandos.html" class="guide-card reveal reveal-delay-2">
+                <div class="guide-card-icon">⌨️</div>
+                <div class="guide-card-body">
+                    <h3>Comandos del Servidor</h3>
+                    <p>Lista completa de comandos: general, economía, pwarps, clanes y más.</p>
+                    <span class="guide-card-link">Leer guía →</span>
+                </div>
+            </a>
+            <a href="guia-rangos.html" class="guide-card reveal reveal-delay-3">
+                <div class="guide-card-icon">💎</div>
+                <div class="guide-card-body">
+                    <h3>Sistema de Rangos</h3>
+                    <p>Conoce los rangos disponibles, sus beneficios y cómo obtenerlos.</p>
+                    <span class="guide-card-link">Leer guía →</span>
+                </div>
+            </a>
+            <a href="guia-misiones.html" class="guide-card reveal reveal-delay-4">
+                <div class="guide-card-icon">📜</div>
+                <div class="guide-card-body">
+                    <h3>Misiones y Desafíos</h3>
+                    <p>Completa misiones diarias, semanales y estándar para ganar llaves y recompensas.</p>
+                    <span class="guide-card-link">Leer guía →</span>
+                </div>
+            </a>
+            <a href="guia-economia.html" class="guide-card reveal reveal-delay-5">
+                <div class="guide-card-icon">💰</div>
+                <div class="guide-card-body">
+                    <h3>Economía y ArCoins</h3>
+                    <p>Aprende a usar el mercado, la tienda, las subastas y los pwarps.</p>
+                    <span class="guide-card-link">Leer guía →</span>
+                </div>
+            </a>
+            <a href="guia-clanes.html" class="guide-card reveal reveal-delay-6">
+                <div class="guide-card-icon">⚔️</div>
+                <div class="guide-card-body">
+                    <h3>Clanes</h3>
+                    <p>Crea tu clan, recluta miembros, forma alianzas y conquista el servidor.</p>
+                    <span class="guide-card-link">Leer guía →</span>
+                </div>
+            </a>
         </div>
     </div>
 </section>
